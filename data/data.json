@@ -1,0 +1,51 @@
+{
+  "site": {
+    "logoText": "Plants Path Collective",
+    "heroTitle": "We build immersive game experiences",
+    "heroDescription": "We create fun games with memorable worlds and characters."
+  },
+  "studio": {
+    "name": "Plants Path Collective",
+    "email": "platnspathco@outlook.com"
+  },
+  "socials": [
+    {
+      "name": "Twitter",
+      "url": "https://x.com/PlantsPathCo"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/plantspathco"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Car-Loop",
+      "description": "Psychological horror VR game with driving elements and procedural generation.",
+      "thumbnail": "https://i.imgur.com/BTx7b1s.png",
+      "image": "https://i.imgur.com/JSl88oB.png",
+      "url": "https://plants-path-co.itch.io/car-loop"
+    },
+    {
+      "title": "Break the Bubble",
+      "description": "A short play about a developer and how he breaks the genre bubble to create something new.",
+      "thumbnail": "https://i.imgur.com/Oac1gLZ.png",
+      "image": "https://i.imgur.com/0nRsSsi.png",
+      "url": "https://plants-path-co.itch.io/romper-la-burbuja-ggj-2025"
+    },
+    {
+      "title": "Hunters: Awakening",
+      "description": "When myths awaken, someone must hunt them.",
+      "thumbnail": "https://i.imgur.com/eEe17Rg.png",
+      "image": "https://i.imgur.com/eEe17Rg.png",
+      "url": "https://plants-path-co.itch.io/hunters-awakening"
+    },
+    {
+      "title": "Hunters: Vega",
+      "description": "Reality fractures. Loss is the cause. The hunt is the answer.",
+      "image": "https://i.imgur.com/placeholder.png",
+      "thumbnail": "https://i.imgur.com/hh2OL2D.png",
+      "url": "#"
+    }
+  ]
+}
