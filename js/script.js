@@ -61,7 +61,9 @@ async function loadData() {
             let iconClass = "fas fa-link";
             const platform = social.name.toLowerCase();
             if (platform.includes("twitter") || platform.includes("x")) iconClass = "fab fa-twitter";
+            else if (platform.includes("bluesky")) iconClass = "fab fa-bluesky";
             else if (platform.includes("youtube")) iconClass = "fab fa-youtube";
+            else if (platform.includes("tiktok")) iconClass = "fab fa-tiktok";
             else if (platform.includes("instagram")) iconClass = "fab fa-instagram";
             else if (platform.includes("github")) iconClass = "fab fa-github";
             else if (platform.includes("discord")) iconClass = "fab fa-discord";
@@ -98,7 +100,9 @@ async function loadData() {
             let iconClass = "fas fa-link";
             const platform = social.name.toLowerCase();
             if (platform.includes("twitter") || platform.includes("x")) iconClass = "fab fa-twitter";
+            else if (platform.includes("bluesky")) iconClass = "fab fa-bsky";
             else if (platform.includes("youtube")) iconClass = "fab fa-youtube";
+            else if (platform.includes("tiktok")) iconClass = "fab fa-tiktok";
             else if (platform.includes("instagram")) iconClass = "fab fa-instagram";
             else if (platform.includes("github")) iconClass = "fab fa-github";
             else if (platform.includes("discord")) iconClass = "fab fa-discord";

@@ -14,8 +14,16 @@
       "url": "https://x.com/PlantsPathCo"
     },
     {
+      "name": "Bluesky",
+      "url": "https://bsky.app/profile/plantspathco.bsky.social"
+    },
+    {
       "name": "Instagram",
       "url": "https://www.instagram.com/plantspathco"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@plantspathco"
     }
   ],
   "projects": [
@@ -46,6 +54,13 @@
       "image": "https://i.imgur.com/placeholder.png",
       "thumbnail": "https://i.imgur.com/hh2OL2D.png",
       "url": "#"
+    },
+    {
+      "title": "ER RCP Simulator",
+      "description": "Describe your game...",
+      "image": "https://i.imgur.com/placeholder.png",
+      "thumbnail": "https://i.imgur.com/hh2OL2D.png",
+      "url": ""
     }
   ]
 }
