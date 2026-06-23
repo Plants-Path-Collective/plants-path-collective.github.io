@@ -28,6 +28,20 @@
   ],
   "projects": [
     {
+      "title": "Hunters: Fracture in Time",
+      "description": "Reality fractures. Loss is the cause. The hunt is the answer.",
+      "image": "https://i.imgur.com/placeholder.png",
+      "thumbnail": "https://i.imgur.com/hh2OL2D.png",
+      "url": "#"
+    },
+    {
+      "title": "Hunters: Awakening",
+      "description": "When myths awaken, someone must hunt them.",
+      "thumbnail": "https://i.imgur.com/eEe17Rg.png",
+      "image": "https://i.imgur.com/eEe17Rg.png",
+      "url": "https://plants-path-co.itch.io/hunters-awakening"
+    },
+    {
       "title": "Car-Loop",
       "description": "Psychological horror VR game with driving elements and procedural generation.",
       "thumbnail": "https://i.imgur.com/BTx7b1s.png",
@@ -40,27 +54,6 @@
       "thumbnail": "https://i.imgur.com/Oac1gLZ.png",
       "image": "https://i.imgur.com/0nRsSsi.png",
       "url": "https://plants-path-co.itch.io/romper-la-burbuja-ggj-2025"
-    },
-    {
-      "title": "Hunters: Awakening",
-      "description": "When myths awaken, someone must hunt them.",
-      "thumbnail": "https://i.imgur.com/eEe17Rg.png",
-      "image": "https://i.imgur.com/eEe17Rg.png",
-      "url": "https://plants-path-co.itch.io/hunters-awakening"
-    },
-    {
-      "title": "Hunters: Vega",
-      "description": "Reality fractures. Loss is the cause. The hunt is the answer.",
-      "image": "https://i.imgur.com/placeholder.png",
-      "thumbnail": "https://i.imgur.com/hh2OL2D.png",
-      "url": "#"
-    },
-    {
-      "title": "ER RCP Simulator",
-      "description": "Describe your game...",
-      "image": "https://i.imgur.com/placeholder.png",
-      "thumbnail": "https://i.imgur.com/hh2OL2D.png",
-      "url": ""
     }
   ]
 }
