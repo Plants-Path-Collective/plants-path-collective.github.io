@@ -6,7 +6,7 @@ generan a HTML automáticamente vía GitHub Actions cada vez que subís un
 
 ## Escribir un devlog nuevo
 
-1. Creá un archivo `.md` en `/devlogs` (mirá `fracture-prototype.md` como
+1. Creá un archivo `.md` en `/devlogs` (mirá `devlog-template.md` como
    ejemplo del formato: frontmatter + texto + imágenes).
 2. Commiteá y subí ese único archivo con GitHub Desktop, como siempre.
 3. GitHub Actions corre solo, genera `devlog/{slug}.html` y actualiza
