@@ -23,24 +23,33 @@ async function loadData() {
                 else if (p.url.includes("epicgames")) iconClass = "fab fa-epic-games";
                 else if (p.url.includes("gog")) iconClass = "fab fa-gog";
 
+                const esComingSoon = p.url === "#";
+
+                const buttonHTML = esComingSoon
+                    ? `<span class="store-btn coming-soon"><i class="${iconClass}"></i> Coming Soon</span>`
+                    : `<a href="${p.url}" target="_blank" class="store-btn"><i class="${iconClass}"></i> Play Now</a>`;
+
                 return `
-                    <div class="card" style="--card-bg-img: url('${p.image}')">
-                        <div class="card-content">
-                            <div>
-                                <h3>${escapeHtml(p.title)}</h3>
-                                <p>${escapeHtml(p.description)}</p>
-                            </div>
-                            <a href="${p.url}" target="_blank" class="store-btn">
-                                <i class="${iconClass}"></i> Play Now
-                            </a>
+                <div class="card" style="--card-bg-img: url('${p.background}')">
+                    <div class="card-content">
+                        <div>                      
+                            <h3>${escapeHtml(p.title)}</h3>
+                            <p>${escapeHtml(p.description)}</p>
                         </div>
-                        <div class="card-thumbnail">
-                            <img src="${p.thumbnail}" alt="${escapeHtml(p.title)} thumbnail" loading="lazy" onerror="this.src='https://placehold.co/600x800?text=No+Image'">
-                        </div>
+                        ${buttonHTML}  
                     </div>
-                `;
+                    <div class="card-thumbnail">
+                        <img src="${p.thumbnail}" alt="${escapeHtml(p.title)} thumbnail" loading="lazy" onerror="this.src='https://placehold.co/600x800?text=No+Image'">
+                    </div>
+                </div>
+            `;
             })
             .join("");
+    }
+
+    // Devlogs (news section)
+    if (data.devlogs) {
+        initDevlogs(data.devlogs);
     }
 
     // Footer icons (email + socials)
@@ -120,6 +129,91 @@ async function loadData() {
             navIconsContainer.appendChild(link);
         });
     }
+}
+
+// ---- Devlogs (news section) ----
+let devlogState = {
+    entries: [],
+    activeFilter: "all",
+    searchTerm: ""
+};
+
+function initDevlogs(entries) {
+    // Newest first
+    devlogState.entries = [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    renderDevlogFilters(devlogState.entries);
+    renderDevlogList();
+
+    const searchInput = document.querySelector("#devlog-search-input");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            devlogState.searchTerm = e.target.value.trim().toLowerCase();
+            renderDevlogList();
+        });
+    }
+}
+
+function renderDevlogFilters(entries) {
+    const filtersContainer = document.querySelector("#devlog-filters");
+    if (!filtersContainer) return;
+
+    const categories = ["all", ...new Set(entries.map(e => e.category))];
+
+    filtersContainer.innerHTML = categories
+        .map(cat => {
+            const label = cat === "all" ? "All" : cat;
+            const isActive = cat === devlogState.activeFilter ? "active" : "";
+            return `<button type="button" class="devlog-filter ${isActive}" data-filter="${escapeHtml(cat)}">${escapeHtml(label)}</button>`;
+        })
+        .join("");
+
+    filtersContainer.querySelectorAll(".devlog-filter").forEach(btn => {
+        btn.addEventListener("click", () => {
+            devlogState.activeFilter = btn.dataset.filter;
+            filtersContainer.querySelectorAll(".devlog-filter").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderDevlogList();
+        });
+    });
+}
+
+function renderDevlogList() {
+    const listContainer = document.querySelector("#devlog-list");
+    if (!listContainer) return;
+
+    const filtered = devlogState.entries.filter(entry => {
+        const matchesFilter = devlogState.activeFilter === "all" || entry.category === devlogState.activeFilter;
+        const haystack = `${entry.title} ${entry.excerpt} ${entry.category} ${formatDevlogDate(entry.date)}`.toLowerCase();
+        const matchesSearch = !devlogState.searchTerm || haystack.includes(devlogState.searchTerm);
+        return matchesFilter && matchesSearch;
+    });
+
+    if (!filtered.length) {
+        listContainer.innerHTML = `<p class="devlog-empty">No devlogs match your search.</p>`;
+        return;
+    }
+
+    listContainer.innerHTML = filtered
+        .map(entry => {
+            const tagClass = entry.category === "General" ? "devlog-tag general" : "devlog-tag";
+            return `
+                <article class="devlog-entry">
+                    <div class="devlog-meta">
+                        <span class="devlog-date">${formatDevlogDate(entry.date)}</span>
+                        <span class="${tagClass}">${escapeHtml(entry.category)}</span>
+                    </div>
+                    <h3>${escapeHtml(entry.title)}</h3>
+                    <p>${escapeHtml(entry.excerpt)}</p>
+                </article>
+            `;
+        })
+        .join("");
+}
+
+function formatDevlogDate(dateStr) {
+    const date = new Date(dateStr + "T00:00:00");
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" }).toUpperCase();
 }
 
 function escapeHtml(str) {
