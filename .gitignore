@@ -18,11 +18,5 @@ _site/
 Gemfile.lock
 .idea/indexLayout.xml
 .idea/vcs.xml
-data/admin.html
-js/admin.js
-js/admin.js
-data/admin.html
-js/admin.js
-admin.html
-css/admin.css
-js/admin.js
+
+/scripts/node_modules/
