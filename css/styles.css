@@ -675,10 +675,10 @@ body {
         min-height: 260px;
     }
     .news-panel.primary {
-        height: 50vh;
+        max-height: 500px;
     }
     .devlog-list {
-        padding: 0;
+        padding: .25rem 1rem .25rem .25rem;
     }
     .news-panel.secondary {
         order: -1;
