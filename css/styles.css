@@ -1,4 +1,6 @@
-/* styles.css */
+/* ============================================================
+   1. CSS Variables / Custom Properties
+   ============================================================ */
 :root {
     --hero-bg: #F85ACB;
     --bg-dark: #633FB5;
@@ -6,12 +8,15 @@
     --accent: #DBF288;
     --text-dark: #422699;
     --text-light: #DBF288;
-    
+
     --cardimg-bg: rgb(255 255 255 / 0, 4);
     --transition: 0.25s ease;
     --font-sans: 'IBM Plex Sans', 'Tahoma', sans-serif;
 }
 
+/* ============================================================
+   2. Reset & Base Styles
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +30,9 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVIGATION */
+/* ============================================================
+   3. Navigation (fixed header)
+   ============================================================ */
 .nav {
     position: fixed;
     top: 0;
@@ -54,6 +61,7 @@ body {
     object-fit: cover;
 }
 
+/* extra pseudo-element (kept as-is) */
 .nav::before {
     filter: blur(12px);
 }
@@ -63,7 +71,6 @@ body {
     align-items: center;
 }
 
-/* Navbar right icons */
 .nav-icons {
     display: flex;
     align-items: center;
@@ -87,7 +94,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* HERO SECTION */
+/* ============================================================
+   4. Hero Section
+   ============================================================ */
 .hero {
     height: 100vh;
     display: flex;
@@ -120,9 +129,12 @@ body {
     line-height: 1.4;
 }
 
-/* SECTIONS */
+/* ============================================================
+   5. General Section Styles
+   ============================================================ */
 .section {
     padding: 100px 2rem;
+    height: 100vh;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -134,7 +146,9 @@ body {
     letter-spacing: -0.5px;
 }
 
-/* WORK (PROJECTS) */
+/* ============================================================
+   6. Projects / Work Grid
+   ============================================================ */
 .section-projects {
     padding: 0;
     margin: 0;
@@ -148,13 +162,15 @@ body {
     margin: 0;
 }
 
-/* PROJECTS GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
 }
 
+/* ============================================================
+   7. Project Cards
+   ============================================================ */
 .card {
     position: relative;
     background: var(--cardimg-bg);
@@ -189,7 +205,7 @@ body {
     z-index: -1;
 }
 
-/* Left side */
+/* Left side – content */
 .card-content {
     padding: 2rem;
     text-align: left;
@@ -214,7 +230,6 @@ body {
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Store button */
 .store-btn {
     display: inline-flex;
     align-items: center;
@@ -240,7 +255,7 @@ body {
     background: rgba(255,255,255,0.3);
 }
 
-/* Right side */
+/* Right side – thumbnail */
 .card-thumbnail {
     z-index: 1;
     display: flex;
@@ -258,7 +273,9 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* FOOTER */
+/* ============================================================
+   8. Footer
+   ============================================================ */
 .site-footer {
     text-align: center;
     padding: 2rem;
@@ -297,7 +314,9 @@ body {
     margin-top: 0.5rem;
 }
 
-/* RESPONSIVE */
+/* ============================================================
+   9. Responsive Styles
+   ============================================================ */
 @media (max-width: 768px) {
     .hero-logo-img {
         max-width: 450px;
