@@ -1,10 +1,18 @@
 [
   {
-    "slug": "devlog-template",
-    "title": "Devlog Template",
+    "slug": "ejemplo-devlog",
+    "title": "Ejemplo de Devlog",
     "category": "Hunters: Fracture in Time",
     "date": "2026-08-05",
     "excerpt": "Este es un Devlog de demostración, para que cualquier desarrollador pueda usarlo como plantilla. Para redactar un devlog, ten en cuenta los siguientes puntos importantes:",
-    "link": "devlog/devlog-template.html"
+    "link": "devlog/ejemplo-devlog.html"
+  },
+  {
+    "slug": "ppco-joins-the-battle",
+    "title": "¡Plants Path Collective entra al combate!",
+    "category": "General",
+    "date": "2026-08-05",
+    "excerpt": "Buenas, aquí Marchel, fundador de Plants Path Collective. En esta ocasión vengo a presentarles lo que sería ya nuestra web en si, lleva un tiempo en línea pero no la habiamos pr…",
+    "link": "devlog/ppco-joins-the-battle.html"
   }
 ]

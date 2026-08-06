@@ -16,9 +16,9 @@ const { marked } = require("marked");
 const matter = require("gray-matter");
 
 marked.setOptions({
-    gfm: true,           
-    breaks: true,        
-    pedantic: false,     
+    gfm: true,
+    breaks: true,
+    pedantic: false,
 });
 
 const REPO_ROOT = path.join(__dirname, "..");
@@ -27,8 +27,18 @@ const DEVLOG_OUT_DIR = path.join(REPO_ROOT, "devlog");
 const DEVLOG_INDEX_PATH = path.join(REPO_ROOT, "data", "devlogs.json");
 const TEMPLATE_PATH = path.join(__dirname, "devlog-template.html");
 
+const MAX_AUTHORS = 4;
+const DEFAULT_AUTHOR_NAME = "Plants Path Collective";
+// TODO: subir un avatar placeholder real a esta ruta (ej. assets/misc/avatars/default.webp)
+const DEFAULT_AVATAR = "../assets/misc/avatars/default.webp";
+
 function formatDate(dateInput) {
-    const date = new Date(dateInput);
+    // dateInput ya viene como "YYYY-MM-DD" (ver toISODateString). Sin el
+    // "T00:00:00", new Date() lo interpreta como medianoche UTC, y en
+    // timezones detrás de UTC (ej. Argentina/Chile) eso cae en el día
+    // anterior al convertir a hora local — de ahí el bug del "04 AGO"
+    // cuando el frontmatter decía 05.
+    const date = new Date(dateInput + "T00:00:00");
     return date
         .toLocaleDateString("es-ES", { year: "numeric", month: "short", day: "2-digit" })
         .toUpperCase();
@@ -72,6 +82,56 @@ function getExcerpt(frontmatter, content) {
 }
 
 /**
+ * Accepts either the legacy singular `author: {}` frontmatter field or
+ * the new plural `authors: [{}, {}]` array, and always returns an array.
+ * Caps at MAX_AUTHORS so a badly-formatted devlog doesn't blow up the layout.
+ */
+function normalizeAuthors(frontmatter, slug) {
+    let authors = [];
+
+    if (Array.isArray(frontmatter.authors) && frontmatter.authors.length) {
+        authors = frontmatter.authors;
+    } else if (frontmatter.author) {
+        authors = [frontmatter.author];
+    }
+
+    if (!authors.length) {
+        authors = [{}]; // fallback: un autor "vacío" que resuelve a los defaults
+    }
+
+    if (authors.length > MAX_AUTHORS) {
+        console.warn(
+            `"${slug}" tiene ${authors.length} autores, se muestran solo los primeros ${MAX_AUTHORS}.`
+        );
+        authors = authors.slice(0, MAX_AUTHORS);
+    }
+
+    return authors;
+}
+
+/**
+ * Renders the stacked author blocks for the sidebar author card,
+ * one on top of another separated by a divider (max MAX_AUTHORS).
+ */
+function renderAuthors(authors) {
+    return authors
+        .map((author) => {
+            const name = author.name || DEFAULT_AUTHOR_NAME;
+            const avatar = author.avatar || DEFAULT_AVATAR;
+            const role = author.role || "";
+            return `
+        <div class="devlog-author-top">
+          <img class="devlog-author-avatar" src="${avatar}" alt="${name}">
+          <div>
+            <div class="devlog-author-name">${name}</div>
+            <div class="devlog-author-role">${role}</div>
+          </div>
+        </div>`;
+        })
+        .join(`\n        <hr class="devlog-author-divider">`);
+}
+
+/**
  * Walks the top-level markdown tokens and groups them into
  * "blocks": either a single image, or a run of other content
  * (paragraphs, lists, etc.) that gets wrapped in one glass panel.
@@ -105,10 +165,10 @@ function renderContent(markdownBody) {
                 const captionParts = [text, title].filter(Boolean);
                 const caption = captionParts.join(" — ");
                 return `
-      <figure class="devlog-figure">
-        <img src="${href}" alt="${text || ""}" loading="lazy">
-        ${caption ? `<figcaption>${caption}</figcaption>` : ""}
-      </figure>`;
+                  <figure class="devlog-figure">
+                    <img src="${href}" alt="${text || ""}" loading="lazy">
+                    ${caption ? `<figcaption>${caption}</figcaption>` : ""}
+                  </figure>`;
             }
 
             const html = marked.parser(block.tokens);
@@ -126,15 +186,14 @@ function buildDevlog(filename, template) {
     const { data: frontmatter, content } = matter(raw);
 
     const slug = slugify(filename);
-    const author = frontmatter.author || {};
+    const authors = normalizeAuthors(frontmatter, slug);
     const isoDate = frontmatter.date ? toISODateString(frontmatter.date) : null;
 
     const html = template
         .replaceAll("{{TITLE}}", frontmatter.title || "Untitled devlog")
         .replaceAll("{{GAME}}", frontmatter.game || "General")
-        .replaceAll("{{AUTHOR_AVATAR}}", author.avatar || "")
-        .replaceAll("{{AUTHOR_NAME}}", author.name || "Plants Path Collective")
-        .replaceAll("{{AUTHOR_ROLE}}", author.role || "")
+        .replaceAll("{{AUTHORS}}", renderAuthors(authors))
+        .replaceAll("{{AUTHOR_CARD_MODIFIER}}", authors.length > 1 ? "multi-author" : "")
         .replaceAll("{{DATE_UPLOADED}}", isoDate ? formatDate(isoDate) : "")
         .replaceAll(
             "{{BACKGROUND_IMAGE_CSS}}",

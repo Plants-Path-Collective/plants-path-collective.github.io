@@ -1,11 +1,14 @@
 ---
-title: "Devlog Template"
+title: "Ejemplo de Devlog"
 game: "Hunters: Fracture in Time"
 date: 2026-08-05
-author:
-  name: "Marchel"
-  role: "Director de Proyecto, Programador"
-  avatar: "../assets/misc/avatars/marchel.gif"
+authors:
+  - name: "Marchel"
+    role: "Director de Proyecto, Programador"
+    avatar: "../assets/misc/avatars/marchel.gif"
+  - name: "Plantita"
+    role: "Apoyo Moral"
+    avatar: "../assets/misc/icon.webp"
 background: "https://i.imgur.com/JpxlesD.png"
 ---
 

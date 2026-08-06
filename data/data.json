@@ -28,28 +28,28 @@
   "projects": [
     {
       "title": "Hunters: Fracture in Time",
-      "description": "Reality fractures. Loss is the cause. The hunt is the answer.",
+      "description": "La realidad se fractura. La pérdida es la causa. La caza es la respuesta.",
       "background": "../assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp",
       "thumbnail": "../assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp",
       "url": "#"
     },
     {
       "title": "Hunters: Awakening",
-      "description": "When myths awaken, someone must hunt them.",
+      "description": "Cuando los mitos despiertan, alguien debe darles caza.",
       "thumbnail": "../assets/projects/hunters-awakening/hunters-awakening_thumbnail.webp",
       "background": "../assets/projects/hunters-awakening/hunters-awakening_thumbnail.webp",
       "url": "https://plants-path-co.itch.io/hunters-awakening"
     },
     {
       "title": "Car-Loop",
-      "description": "Psychological horror VR game with driving elements and procedural generation.",
+      "description": "Juego de realidad virtual de terror psicológico con elementos de conducción y generación procedural.",
       "thumbnail": "../assets/projects/car-loop/car-loop_thumbnail.webp",
       "background": "../assets/projects/car-loop/car-loop_bg.webp",
       "url": "https://plants-path-co.itch.io/car-loop"
     },
     {
       "title": "Break the Bubble",
-      "description": "A short play about a developer and how he breaks the genre bubble to create something new.",
+      "description": "Un juego corto sobre un desarrollador y cómo rompe los límites de un género para crear algo nuevo.",
       "thumbnail": "../assets/projects/break-bubble/break-bubble_thumbnail.webp",
       "background": "../assets/projects/break-bubble/break-bubble_bg.webp",
       "url": "https://plants-path-co.itch.io/romper-la-burbuja-ggj-2025"

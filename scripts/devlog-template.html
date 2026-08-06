@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -13,38 +13,32 @@
 
 <body class="devlog-page" style="--page-bg-image: {{BACKGROUND_IMAGE_CSS}};">
 
-  <main class="devlog-layout">
+<main class="devlog-layout">
 
-    <aside class="devlog-sidebar">
-      <div class="devlog-author-card glass-panel">
-        <div class="devlog-author-top">
-          <img class="devlog-author-avatar" src="{{AUTHOR_AVATAR}}" alt="{{AUTHOR_NAME}}">
-          <div>
-            <div class="devlog-author-name">{{AUTHOR_NAME}}</div>
-            <div class="devlog-author-role">{{AUTHOR_ROLE}}</div>
-          </div>
-        </div>
-        <hr class="devlog-author-divider">
-        <div class="devlog-date-uploaded">{{DATE_UPLOADED}}</div>
-      </div>
+  <aside class="devlog-sidebar">
+    <div class="devlog-author-card glass-panel {{AUTHOR_CARD_MODIFIER}}">
+      {{AUTHORS}}
+      <hr class="devlog-author-divider">
+      <div class="devlog-date-uploaded">{{DATE_UPLOADED}}</div>
+    </div>
 
-      <a class="devlog-back-btn glass-panel" href="{{BACK_HREF}}">
-        <i class="fas fa-arrow-left"></i> Back
-      </a>
-    </aside>
+    <a class="devlog-back-btn glass-panel" href="{{BACK_HREF}}">
+      <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+  </aside>
 
-    <article class="devlog-main">
+  <article class="devlog-main">
 
-      <div class="devlog-title-panel glass-panel">
-        <h1>{{TITLE}}</h1>
-        <p class="devlog-game">{{GAME}}</p>
-      </div>
+    <div class="devlog-title-panel glass-panel">
+      <h1>{{TITLE}}</h1>
+      <p class="devlog-game">{{GAME}}</p>
+    </div>
 
-      {{CONTENT}}
+    {{CONTENT}}
 
-    </article>
+  </article>
 
-  </main>
+</main>
 
 </body>
 
