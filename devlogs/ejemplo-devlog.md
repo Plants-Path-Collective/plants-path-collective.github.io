@@ -1,6 +1,6 @@
 ---
 title: "Ejemplo de Devlog"
-game: "Hunters: Fracture in Time"
+game: "General"
 date: 2026-08-05
 authors:
   - name: "Marchel"

@@ -29,18 +29,12 @@ const TEMPLATE_PATH = path.join(__dirname, "devlog-template.html");
 
 const MAX_AUTHORS = 4;
 const DEFAULT_AUTHOR_NAME = "Plants Path Collective";
-// TODO: subir un avatar placeholder real a esta ruta (ej. assets/misc/avatars/default.webp)
-const DEFAULT_AVATAR = "../assets/misc/avatars/default.webp";
+const DEFAULT_AVATAR = "../assets/misc/icon.webp";
 
 function formatDate(dateInput) {
-    // dateInput ya viene como "YYYY-MM-DD" (ver toISODateString). Sin el
-    // "T00:00:00", new Date() lo interpreta como medianoche UTC, y en
-    // timezones detrás de UTC (ej. Argentina/Chile) eso cae en el día
-    // anterior al convertir a hora local — de ahí el bug del "04 AGO"
-    // cuando el frontmatter decía 05.
     const date = new Date(dateInput + "T00:00:00");
     return date
-        .toLocaleDateString("es-ES", { year: "numeric", month: "short", day: "2-digit" })
+        .toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" })
         .toUpperCase();
 }
 

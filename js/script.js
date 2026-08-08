@@ -26,7 +26,7 @@ function escapeHtml(str) {
  */
 function formatDevlogDate(dateStr) {
     const date = new Date(dateStr + "T00:00:00");
-    return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" }).toUpperCase();
+    return date.toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" });
 }
 
 /**

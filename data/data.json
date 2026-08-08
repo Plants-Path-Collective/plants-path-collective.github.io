@@ -1,7 +1,7 @@
 {
   "site": {
     "logoText": "Plants Path Collective",
-    "heroDescription": "We create fun games with memorable worlds and characters."
+    "heroDescription": "Creamos juegos divertidos con mundos y personajes inolvidables."
   },
   "studio": {
     "name": "Plants Path Collective",
@@ -27,7 +27,7 @@
   ],
   "projects": [
     {
-      "title": "Hunters: Fracture in Time",
+      "title": "Hunters: Fractura en el Tiempo",
       "description": "La realidad se fractura. La pérdida es la causa. La caza es la respuesta.",
       "background": "../assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp",
       "thumbnail": "../assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp",
@@ -48,7 +48,7 @@
       "url": "https://plants-path-co.itch.io/car-loop"
     },
     {
-      "title": "Break the Bubble",
+      "title": "Romper la Burbuja",
       "description": "Un juego corto sobre un desarrollador y cómo rompe los límites de un género para crear algo nuevo.",
       "thumbnail": "../assets/projects/break-bubble/break-bubble_thumbnail.webp",
       "background": "../assets/projects/break-bubble/break-bubble_bg.webp",
