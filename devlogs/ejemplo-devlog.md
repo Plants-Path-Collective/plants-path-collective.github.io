@@ -10,6 +10,7 @@ authors:
     role: "Apoyo Moral"
     avatar: "../assets/misc/icon.webp"
 background: "https://i.imgur.com/JpxlesD.png"
+excerpt: "Breve descripción del contenido."
 ---
 
 ![Imagen de portada del Devlog](https://i.imgur.com/BTx7b1s.png)

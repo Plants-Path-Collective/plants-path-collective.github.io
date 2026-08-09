@@ -1,10 +1,18 @@
 [
   {
+    "slug": "story-and-progress",
+    "title": "Una pincelada de Historia, y otra de Progreso",
+    "category": "Hunters: Fractura en el Tiempo",
+    "date": "2026-08-13",
+    "excerpt": "Antes de partir, queremos aclarar, que el contenido de los Devlogs en si es un poco desordenado, ya que la idea principal es contar un poco del avance, y en un futuro hacer una…",
+    "link": "devlog/story-and-progress.html"
+  },
+  {
     "slug": "ejemplo-devlog",
     "title": "Ejemplo de Devlog",
     "category": "General",
     "date": "2026-08-05",
-    "excerpt": "Este es un Devlog de demostración, para que cualquier desarrollador pueda usarlo como plantilla. Para redactar un devlog, ten en cuenta los siguientes puntos importantes:",
+    "excerpt": "Breve descripción del contenido.",
     "link": "devlog/ejemplo-devlog.html"
   }
 ]
