@@ -183,6 +183,14 @@ function buildDevlog(filename, template) {
     const authors = normalizeAuthors(frontmatter, slug);
     const isoDate = frontmatter.date ? toISODateString(frontmatter.date) : null;
 
+    const SITE_URL = "https://plants-path-collective.github.io";
+
+    const excerpt = getExcerpt(frontmatter, content);
+    const ogImage = frontmatter.background
+        ? `${SITE_URL}/${frontmatter.background.replace(/^\.\.\//, "")}`
+        : `${SITE_URL}/assets/misc/main-page.webp`;
+    const ogUrl = `${SITE_URL}/devlog/${slug}.html`;
+    
     const html = template
         .replaceAll("{{TITLE}}", frontmatter.title || "Untitled devlog")
         .replaceAll("{{GAME}}", frontmatter.game || "General")
@@ -194,26 +202,17 @@ function buildDevlog(filename, template) {
             frontmatter.background ? `url('${frontmatter.background}')` : "none"
         )
         .replaceAll("{{BACK_HREF}}", "../index.html#news")
-        .replaceAll("{{CONTENT}}", renderContent(content));
+        .replaceAll("{{CONTENT}}", renderContent(content))
 
-    fs.mkdirSync(DEVLOG_OUT_DIR, { recursive: true });
-    fs.writeFileSync(path.join(DEVLOG_OUT_DIR, `${slug}.html`), html, "utf8");
-
-    const SITE_URL = "https://plants-path-collective.github.io";
-
-    const excerpt = getExcerpt(frontmatter, content);
-    const ogImage = frontmatter.background
-        ? `${SITE_URL}/${frontmatter.background.replace(/^\.\.\//, "")}`
-        : `${SITE_URL}/assets/misc/logo_x3.webp`;
-    const ogUrl = `${SITE_URL}/devlog/${slug}.html`;
-
-    const html = template
         .replaceAll("{{TITLE}}", frontmatter.title || "Untitled devlog")
         
         .replaceAll("{{OG_DESCRIPTION}}", excerpt || "Un nuevo devlog de Plants Path Collective.")
         .replaceAll("{{OG_IMAGE}}", ogImage)
         .replaceAll("{{OG_URL}}", ogUrl)
         .replaceAll("{{CONTENT}}", renderContent(content));
+        
+    fs.mkdirSync(DEVLOG_OUT_DIR, { recursive: true });
+    fs.writeFileSync(path.join(DEVLOG_OUT_DIR, `${slug}.html`), html, "utf8");
 
     return {
         slug,
