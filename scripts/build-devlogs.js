@@ -186,7 +186,7 @@ function buildDevlog(filename, template) {
     const SITE_URL = "https://plants-path-collective.github.io";
 
     const excerpt = getExcerpt(frontmatter, content);
-    const ogImage = frontmatter.background
+    const ogImage = frontmatter.social_image
         ? `${SITE_URL}/${frontmatter.background.replace(/^\.\.\//, "")}`
         : `${SITE_URL}https://plants-path-collective.github.io/assets/misc/main-page.webp`;
     const ogUrl = `${SITE_URL}/devlog/${slug}.html`;
