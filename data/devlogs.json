@@ -6,13 +6,5 @@
     "date": "2026-08-13",
     "excerpt": "Antes de partir, queremos aclarar, que el contenido de los Devlogs en si es un poco desordenado, ya que la idea principal es contar un poco del avance, y en un futuro hacer una…",
     "link": "devlog/story-and-progress.html"
-  },
-  {
-    "slug": "ejemplo-devlog",
-    "title": "Ejemplo de Devlog",
-    "category": "General",
-    "date": "2026-08-05",
-    "excerpt": "Breve descripción del contenido.",
-    "link": "devlog/ejemplo-devlog.html"
   }
 ]
