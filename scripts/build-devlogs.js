@@ -199,6 +199,22 @@ function buildDevlog(filename, template) {
     fs.mkdirSync(DEVLOG_OUT_DIR, { recursive: true });
     fs.writeFileSync(path.join(DEVLOG_OUT_DIR, `${slug}.html`), html, "utf8");
 
+    const SITE_URL = "https://plants-path-collective.github.io";
+
+    const excerpt = getExcerpt(frontmatter, content);
+    const ogImage = frontmatter.background
+        ? `${SITE_URL}/${frontmatter.background.replace(/^\.\.\//, "")}`
+        : `${SITE_URL}/assets/misc/logo_x3.webp`;
+    const ogUrl = `${SITE_URL}/devlog/${slug}.html`;
+
+    const html = template
+        .replaceAll("{{TITLE}}", frontmatter.title || "Untitled devlog")
+        
+        .replaceAll("{{OG_DESCRIPTION}}", excerpt || "Un nuevo devlog de Plants Path Collective.")
+        .replaceAll("{{OG_IMAGE}}", ogImage)
+        .replaceAll("{{OG_URL}}", ogUrl)
+        .replaceAll("{{CONTENT}}", renderContent(content));
+
     return {
         slug,
         title: frontmatter.title || "Untitled devlog",
