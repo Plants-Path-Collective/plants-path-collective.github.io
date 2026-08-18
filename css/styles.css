@@ -14,6 +14,8 @@
     --bg-dark: #633FB5;    /* violeta: fondo proyectos / footer / nav icons */
     --bg-card: #1c1c1c;    /* reservado, actualmente sin uso en el CSS */
     --accent: #DBF288;     /* lima: hover de filtros, checkboxes, code */
+    --accent-2: #633FB5;     /* violeta */
+    --accent-3: #F85ACB;     /* rosa */
     --text-dark: #422699;  /* texto sobre fondos claros (hero, filtro activo) */
     --text-light: #DBF288; /* copyright del footer */
 
@@ -759,6 +761,195 @@ body.devlog-page::before {
 @media(max-width:500px) {
     .devlog-team-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   Item / Object Table
+   ============================================================ */
+
+.devlog-item-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: var(--glass-bg);
+
+    backdrop-filter: blur(var(--glass-blur))
+        brightness(var(--glass-brightness))
+        saturate(var(--glass-saturate));
+
+    -webkit-backdrop-filter: blur(var(--glass-blur))
+        brightness(var(--glass-brightness))
+        saturate(var(--glass-saturate));
+
+    box-shadow:
+        var(--glass-shadow),
+        var(--glass-highlight);
+}
+
+/* ---- Rows ---- */
+
+.devlog-item-row {
+    display: grid;
+    grid-template-columns:
+        minmax(120px, 0.9fr)
+        minmax(80px, 0.7fr)
+        minmax(220px, 2fr)
+        minmax(220px, 2fr);
+
+    align-items: stretch;
+
+    color: rgba(var(--white-rgb), 0.88);
+}
+
+/* ---- Cells ---- */
+
+.devlog-item-row > div {
+    padding: 1rem 1.1rem;
+    display: flex;
+    align-items: center;
+
+    border-right: 1px solid rgba(var(--white-rgb), 0.15);
+}
+
+.devlog-item-row > div:last-child {
+    border-right: none;
+}
+
+/* ---- Header ---- */
+
+.devlog-item-header {
+    background: rgba(var(--white-rgb), 0.16);
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.25);
+
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    color: rgba(var(--white-rgb), 0.75);
+}
+
+.devlog-item-header > div {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+/* ---- Body rows ---- */
+
+.devlog-item-row:not(.devlog-item-header) {
+    background: rgba(var(--white-rgb), 0.025);
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.devlog-item-row:not(.devlog-item-header):hover {
+    background: rgba(var(--white-rgb), 0.09);
+}
+
+.devlog-item-row + .devlog-item-row {
+    border-top: 1px solid rgba(var(--white-rgb), 0.14);
+}
+
+/* ---- Item name ---- */
+
+.devlog-item-name {
+    font-weight: 600;
+    color: rgb(var(--white-rgb));
+}
+
+/* ---- Rarity ---- */
+
+.devlog-item-rarity {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.25rem 0.65rem;
+
+    border-radius: 20px;
+
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    background: rgba(var(--white-rgb), 0.12);
+    border: 1px solid rgba(var(--white-rgb), 0.3);
+
+    color: rgb(var(--white-rgb));
+    white-space: nowrap;
+}
+
+.devlog-item-rarity.common {
+    background: rgba(var(--accent-1), 0.15);
+    border-color: rgba(var(--accent-1), 0.5);
+    color: var(--accent-1);
+}
+
+.devlog-item-rarity.rare {
+    background: rgba(var(--accent-2), 0.15);
+    border-color: rgba(var(--accent-2), 0.5);
+    color: var(--accent-2);
+}
+
+.devlog-item-row > div:nth-child(2) {
+    justify-content: center;
+    text-align: center;
+}
+
+.devlog-item-row > div:nth-child(3) {
+    font-style: italic;
+    color: rgba(var(--white-rgb), 0.75);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 700px) {
+
+    .devlog-item-table .devlog-item-header {
+        display: none !important;
+    }
+
+    .devlog-item-table .devlog-item-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .devlog-item-table .devlog-item-row > div {
+        border: none;
+    }
+
+    .devlog-item-table .devlog-item-row > div:nth-child(1) {
+        grid-column: 1;
+    }
+
+    .devlog-item-table .devlog-item-row > div:nth-child(2) {
+        grid-column: 2;
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .devlog-item-table .devlog-item-row > div:nth-child(3) {
+        grid-column: 1 / -1;
+        padding-top: 0.25rem;
+        padding-bottom: 0.9rem;
+    }
+
+    .devlog-item-table .devlog-item-row > div:nth-child(4) {
+        grid-column: 1 / -1;
+        padding-top: 0.9rem;
+        padding-bottom: 1rem;
+        border-top: 1px solid rgba(var(--white-rgb), 0.12);
+    }
+
+    .devlog-item-table .devlog-item-row + .devlog-item-row {
+        border-top: 1px solid rgba(var(--white-rgb), 0.2);
     }
 }
 

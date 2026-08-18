@@ -165,11 +165,20 @@ function renderContent(markdownBody) {
                   </figure>`;
             }
 
-            const html = marked.parser(block.tokens);
+            const html = block.tokens
+            .map((token) => {
+                if (token.type === "html") {
+                    return token.text;
+                }
+
+                return marked.parser([token]);
+            })
+            .join("\n");
+
             return `
-      <div class="devlog-text-panel glass-panel">
-        ${html.trim()}
-      </div>`;
+            <div class="devlog-text-panel glass-panel">
+                ${html.trim()}
+            </div>`;
         })
         .join("\n");
 }
