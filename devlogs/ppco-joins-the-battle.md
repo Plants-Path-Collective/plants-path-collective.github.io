@@ -7,7 +7,7 @@ authors:
     role: "Fundador de Plants Path Collective"
     avatar: "../assets/misc/avatars/marchel.gif"
 background: "../assets/misc/backgrounds/generic-background1.webp"
-excerpt: "¡Los Hunters están de vuelta! Conoce Plants Path Collective y descubre nuestro nuevo proyecto, Hunters: Fractura en el Tiempo, junto a su mundo, historia y equipo de desarrollo."
+excerpt: "¡Los Hunters están de vuelta! Conoce Plants Path Collective y descubre nuestro nuevo proyecto, Hunters: Fractura del Tiempo, junto a su mundo, historia y equipo de desarrollo."
 social_image: "https://plants-path-collective.github.io/assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp"
 ---
 
@@ -37,11 +37,11 @@ Y probablemente deberían haber llegado antes.
 
 ---
 
-## Hunters: Fractura en el Tiempo
+## Hunters: Fractura del Tiempo
 
 Esta vez quisimos hacer algo un poco diferente.
 
-Hunters: Fractura en el Tiempo es un JRPG Roguelite en 3D con combates por turnos, ambientado en un mercado de Santiago atrapado dentro de una anomalía temporal conocida como la Fractura.
+Hunters: Fractura del Tiempo es un JRPG Roguelite en 3D con combates por turnos, ambientado en un mercado de Santiago atrapado dentro de una anomalía temporal conocida como la Fractura.
 
 El tiempo ya no parece avanzar como debería.
 
@@ -106,6 +106,6 @@ Este será el proyecto de título que presentaremos para nuestra carrera y, post
 
 ---
 
-Muchas gracias por acompañarme en la lectura de este devlog. Espero que te haya gustado y, si quieres saber más sobre el desarrollo de Hunters: Fractura en el Tiempo, recuerda seguirnos en nuestras redes sociales para mantenerte al tanto de nuevas noticias y futuros devlogs como este.
+Muchas gracias por acompañarme en la lectura de este devlog. Espero que te haya gustado y, si quieres saber más sobre el desarrollo de Hunters: Fractura del Tiempo, recuerda seguirnos en nuestras redes sociales para mantenerte al tanto de nuevas noticias y futuros devlogs como este.
 
 Yo soy Marchel, y espero que tengas un lindo día o/
