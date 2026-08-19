@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Una pincelada de Historia, y otra de Progreso — Plants Path Collective</title>
+  <meta name="description" content="Plants Path Collective es un estudio indie chileno que crea juegos con mundos y personajes inolvidables. Seguí el desarrollo en nuestros devlogs.">
+  <link rel="icon" type="image/png" href="https://i.imgur.com/hh2OL2D.png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css"/>
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Una pincelada de Historia, y otra de Progreso — Plants Path Collective">
+  <meta property="og:description" content="Nuevos objetos, facciones renovadas y el plan de desarrollo.">
+  <meta property="og:image" content="https://plants-path-collective.github.io/assets/misc/backgrounds/generic-background1.webp">
+  <meta property="og:url" content="https://plants-path-collective.github.io/devlog/story-and-progress.html">
+  <meta property="og:site_name" content="Plants Path Collective">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Una pincelada de Historia, y otra de Progreso — Plants Path Collective">
+  <meta name="twitter:description" content="Nuevos objetos, facciones renovadas y el plan de desarrollo.">
+  <meta name="twitter:image" content="https://plants-path-collective.github.io/assets/misc/backgrounds/generic-background1.webp">
+  
+</head>
+
+<body class="devlog-page" style="--page-bg-image: url('../assets/misc/backgrounds/generic-background1.webp');">
+
+<main class="devlog-layout">
+
+  <aside class="devlog-sidebar">
+    <div class="devlog-author-card glass-panel multi-author">
+      
+        <div class="devlog-author-top">
+          <img class="devlog-author-avatar" src="../assets/misc/avatars/marchel.gif" alt="Marchel">
+          <div>
+            <div class="devlog-author-name">Marchel</div>
+            <div class="devlog-author-role">Director de Proyecto, Programador, Diseñador y Guionista</div>
+          </div>
+        </div>
+        <hr class="devlog-author-divider">
+        <div class="devlog-author-top">
+          <img class="devlog-author-avatar" src="../assets/misc/avatars/ame.gif" alt="Ame">
+          <div>
+            <div class="devlog-author-name">Ame</div>
+            <div class="devlog-author-role">Programadora, Diseñadora y Guionista</div>
+          </div>
+        </div>
+      <hr class="devlog-author-divider">
+      <div class="devlog-date-uploaded">13 DE AGOSTO DE 2026</div>
+    </div>
+
+    <a class="devlog-back-btn glass-panel" href="../index.html#news">
+      <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+  </aside>
+
+  <article class="devlog-main">
+
+    <div class="devlog-title-panel glass-panel">
+      <h1>Una pincelada de Historia, y otra de Progreso</h1>
+      <p class="devlog-game">Hunters: Fractura del Tiempo</p>
+    </div>
+
+    
+            <div class="devlog-text-panel glass-panel">
+                <p>Antes de partir, queremos aclarar, que el contenido de los Devlogs en si es un poco desordenado, ya que la idea principal es contar un poco del avance, y en un futuro hacer una presentación formal del juego, es por ello que al principio, es normal sentirse un poco perdido(a), ya que no explicamos todo el contexto y sistemas del juego. Disfruten de la lectura o/</p>
+
+<hr>
+
+<p>Esta semana Ame y mi persona, Marchel, nos reunimos para poder aclarar varios puntos a cambiar tras el fin de la prerpoducción, de esta manera, podremos empezar de manera clara con un prototipo.</p>
+
+<hr>
+
+<h2>¿Cómo funciona el progreso?</h2>
+
+<p>Tomando de referencia juegos como Risk of Rain y THe Binding of Isaac, en Hunters Fracture decidimos que el sistema de progresión, no estuviese basado en niveles como otros JRPGs, es por ello que mirando hacia al lado encontramos a los Roguelites como RoR u Isaac, juegos en los que el jugador juega partidas y obtiene items para potenciar a su personaje, sin embargo, perdiendo practicamente todo al perecer, pero pudiendo desbloquear ciertos personajes, skins o similares tras cada partida en base a ciertos logros conseguidos.</p>
+
+<p>Para Hunters Fracture, decidimos que seria buena idea mantener el progreso o desbloqueo de items, que se añadirian a la pool, y skins o personajes que se añadirian tras desbloquear estos Desafíos como los nombramos; mientras que refiriendonos a los objetos, llegamos a definirlos en dos categorías: los consumibles, veanse pociones, buffs en formas de pociones, entre otros; mientras que por otro lado, estarían los pasivos, estos se asemejarían más a los objetos de Risk of Rain, donde el jugador puede obtenerlos y acumularlos prácticamente infinitamente, dandole esa satisfacción de romper el juego si así lo desea. Vale mencionar que algunos items afectaran a los personajes dependiendo de donde se ubican en el campo de batalla (Ej: este item le da un bono a un personaje a tu izquierda) Refiriendonos a estos últimos, queremos hablar de sus rarezas o tiers, los cuales serian los siguientes tres:</p>
+
+<ul>
+<li><strong>Comunes</strong>: Pueden modificar las estadísticas, aplicar efectos al impactar y reducir el coste de SP de las habilidades.</li>
+<li><strong>Raros</strong>: Pueden modificar comportamientos de ataques y habilidades de los personajes, también pueden aplicar cambios de estados, y buffs en general.</li>
+<li><strong>Únicos</strong>: Cambian las reglas del combate, permiten cambiar estadísticas, como actuan los Aliados u Enemigos, entre otras cosas. A diferencia de los otros tiers, no pueden stackearse, debido a que solo existe 1 copia de cada objeto único en el mundo.</li>
+</ul>
+
+<p>En total, la primera demo contaría con alrededor de <strong>14</strong> objetos, siendo estos: <strong>2</strong> únicos, <strong>4</strong> raros, y <strong>8</strong> comunes.</p>
+
+<p>Aquí algunos de los que tenemos para calmar las ansias:</p>
+
+<div class="devlog-item-table">
+  <div class="devlog-item-row devlog-item-header">
+      <div>Objeto</div>
+      <div>Rareza</div>
+      <div>Historia</div>
+      <div>Efecto</div>
+  </div>
+  <div class="devlog-item-row">
+    <div class="devlog-item-name">Muñeca de Porcelana</div>
+    <div>
+        <span class="devlog-item-rarity common">Común</span>
+    </div>
+    <div class="devlog-item-lore">
+        Una antigua muñeca de porcelana, heredada de generación en generación, observa silenciosamente el puesto, custodiando recuerdos familiares entre frutas y voces.
+    </div>
+    <div class="devlog-item-effect">
+        Aumenta la fuerza del portador en un 25% (+10% por copia), disminuye la defensa física y la defensa mágica, del portador, en un 15% (+10% por copia).
+  </div>
+  </div>
+  <div class="devlog-item-row">
+    <div class="devlog-item-name">Reproductor de CD</div>
+    <div>
+        <span class="devlog-item-rarity rare">Raro</span>
+    </div>
+    <div class="devlog-item-lore">
+        Reproductor de CD de segunda o tercera mano, ha sido usado durante tanto tiempo, que tiende a rayar los CDs que reproduce, rebobinandolos de vez en cuando.
+    </div>
+    <div class="devlog-item-effect">
+        Al atacar o usar una habilidad, 10% (+5% por copia) de probabilidad de repetir el turno del portador, justo después de este.
+  </div>
+  </div>
+</div>
+<hr>
+
+<h2>Pero, ¿De qué va Hunters Fracture?</h2>
+
+<p>Originalmente se tenía pensado que las diferentes facciones de ese entonces (Ocultistas, Mafiosos, Corpos, y Cyborgs), tras la derrota de la Afligida, se peleasen entre sí, con el fin de obtener el poder de la Fractura, ante esto, la asociación ordena al grupo enviado, a defender la Fractura y mantener el balance en la dimensión, mientras que ellos envían refuerzos cada cierto tiempo; la idea principal de esta trama, era tener un final abierto, con posibilidad de traer actualizaciones u DLCs al juego base, con el fin de monatr un endgame y tener una mayor rejugabilidad.</p>
+
+<p>Sin embargo, con el recorte del scope para la primera Demo, en el cual se pasó de tener un loop temporal de 7 días a uno de 3, se decidió reducir la cantidad de facciones, combinando y consolidando algunas, mientras que por otro lado, se tendría que reescribir el storyline para replantear como las diferentes facciones se presentaban durante la historia al jugador.</p>
+
+<hr>
+
+<h2>¿Qué hay de las facciones?</h2>
+
+<p>Como comentamos anteriormente, los objetos únicos se podrían obtener de ciertas misiones correspondientes a las entregadas por facciones, estas serían diferentes interpretaciones de cómo podría ser Chile, si es que hubiese cambiado algo en su historia, esto desde un punto de vista ficticio y fantastico, obviamente. </p>
+
+<p>A la primera de ellas se le conoce como <em>El Mañana</em>.</p>
+            </div>
+
+                  <figure class="devlog-figure">
+                    <img src="https://i.imgur.com/hIOMlZG.gif" alt="" loading="lazy">
+                    
+                  </figure>
+
+            <div class="devlog-text-panel glass-panel">
+                <h3>El Mañana</h3>
+
+<p>Luego del golpe de estado fallido, el lado socialista de la política chilena se ve potenciado y aún mas fanatico, sin embargo el país ampliamente se ve desafiado por problemas economicos debido a aranceles y prohibiciones impuestas por el norte global. Pero Chile se sigue desarollando internamente, trabajando agricultura y cobre similar a lo actual, solo que esta vez fabricamos cables y componentes utilizando el cobre. Fast forward a los años 30 Chile es una republica socialista que es economicamente bastante independiente y educada debido a su fuerte industria de manufactura y minería/agricultura renovable</p>
+
+<hr>
+
+<p>Por otro lado, tenemos a <em>La Santa Franja</em>.</p>
+
+<h3>La Santa Franja</h3>
+
+<p>En cuanto a la segunda facción, esta tendría un desvío en su pasado y se enfocaría en la época de la Independencia de Chile. Queríamos retratar su conexión con la Iglesia, el fanatismo religioso y otros elementos relacionados con este contexto. Uno de los puntos interesantes que planteó nuestra compañera Cori fue cómo, durante la Independencia, algunos obispos y curas se separaron de las iglesias españolas y tomaron partido por el bando chileno, adoptando una fuerte devoción hacia la Virgen del Carmen.</p>
+
+<p>La primera idea que investigué fue la de un Estado totalitario, tomando como referencia la propuesta de Ame de utilizar <em>1984</em>. Como esta nueva facción surgiría a partir de una remodelación de la facción de los Ocultistas, también quería mantener una conexión con su concepto original y continuar su línea temática, pero llevándola hacia un contexto diferente. A partir de esto, llegué a la idea de que durante la Independencia de Chile, tras la derrota de Cancha Rayada, los patriotas recurrirían a un antiguo ritual para formar un pacto con la “Virgen del Carmen”. Sin embargo, la entidad con la que realmente realizan el pacto no sería ella. Gracias a este pacto, la situación del país comenzaría a mejorar: los enemigos y opositores del Estado perecerían, las riquezas comenzarían a abundar y, en general, se alcanzaría un enorme nivel de prosperidad. Sin embargo, esta entidad exigiría cada vez más del país, provocando que el Estado comenzara a cerrarse sobre sí mismo y a volverse progresivamente más autoritario y estricto, hasta finalmente fusionarse con la Iglesia. De esta manera, la religión dejaría de ser una cuestión de fe para convertirse en una verdadera doctrina de Estado.</p>
+
+<p>En la actualidad, la entidad se ha vuelto incontrolable. Extrañas criaturas merodean durante la noche, provocando desapariciones inexplicables, pero quienes intentan investigar estos sucesos son silenciados sin dejar rastro. El Estado decide encubrir todo, reprimiendo cualquier levantamiento y manteniendo ante el público una imagen de perfección. Al mismo tiempo, busca impedir que extranjeros e ideas contrarias a su dogma ingresen al país y puedan hacer eco entre la población.</p>
+
+<h2>Plan de Desarrollo</h2>
+
+<p>Ya para finalizar la semana, hablemos sobre nuestro plan de desarrollo, almenos para lo que sería el Vertical Slice que entregariamos durante Enero de 2027 y daria pie a una eventual demo en sus siguientes meses.</p>
+
+<p>Hicimos una carta gantt con el fin de explicar como seria el avance durante la producción de Hunters Fracture, ya en un futuro les presentaremos un Roadmap  en condiciones de cara al lanzamiento oficial del juego en el 2027; principalmente dividimos el desarrollo en 3 equipos: Programación, Ame y Marchel, Arte, Kori y Benz, y Sonido, externos. Se preguntaran que ocurre con la historia, esta en si es redactada por el equipo de Arte y Programación en conjunto. En cuanto al sonido en si, decidimos contactarnos con chicos de la Escuela Moderna de Música en Santiago, y con un viejo compañero de la GGJ 2025, Joshua Quiroz, a pesar de ser partes del equipo en si, no pertenecen a PPCo y no son parte como tal del Proyecto de Título. </p>
+
+<p>Volviendo al plan de desarrollo, principalmente queremos sentar las bases durante agosto y septiembre, mientras que a la par, queremos hacer playtest de diferentes apartados del juego, vease combate, quests, balanceo de items, narrativa, etc. Estos playtest se realizarian a la mitad y el final de cada mes, siendo minimo 1 obligatorio al mes.</p>
+
+<hr>
+
+<p>Sin mucho más que decir, esperemos que hayan disfrutado de este devlog, muchas gracias por acompañarnos, se despiden Ame y Marchel, buen día o/</p>
+            </div>
+
+  </article>
+
+</main>
+
+</body>
+
+</html>
