@@ -28,6 +28,25 @@
     z-index: 1;
 }
 
+.hunters-hero .studio-logo {
+    position: relative;
+    isolation: isolate;
+}
+
+.hunters-hero .studio-logo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(ellipse, rgba(232, 236, 245, 0.5) 0%, rgba(232, 236, 245, 0) 72%);
+    filter: blur(28px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
 .hunters-news .news-content {
     justify-content: center;
 }
