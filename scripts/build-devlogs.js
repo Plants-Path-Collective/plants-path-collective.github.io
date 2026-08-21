@@ -49,6 +49,28 @@ function slugify(filename) {
     return filename.replace(/\.md$/i, "");
 }
 
+function normalizeTags(frontmatter) {
+    const source = frontmatter.tags ?? frontmatter.game ?? "General";
+    const tags = Array.isArray(source) ? source : [source];
+    const normalized = tags
+        .map((tag) => {
+            if (tag && typeof tag === "object" && !Array.isArray(tag)) {
+                return Object.entries(tag)
+                    .map(([name, value]) => value == null ? name : `${name}: ${value}`)
+                    .join(", ");
+            }
+
+            return String(tag).trim();
+        })
+        .filter(Boolean);
+
+    return [...new Set(normalized.length ? normalized : ["General"] )];
+}
+
+function renderTags(tags) {
+    return tags.map((tag) => `<span class="devlog-tag">${tag}</span>`).join(", ");
+}
+
 function stripMarkdown(text) {
     return text
         .replace(/!\[.*?\]\(.*?\)/g, "")
@@ -190,6 +212,7 @@ function buildDevlog(filename, template) {
 
     const slug = slugify(filename);
     const authors = normalizeAuthors(frontmatter, slug);
+    const tags = normalizeTags(frontmatter);
     const isoDate = frontmatter.date ? toISODateString(frontmatter.date) : null;
 
     const SITE_URL = "https://plants-path-collective.github.io";
@@ -202,7 +225,7 @@ function buildDevlog(filename, template) {
     
     const html = template
         .replaceAll("{{TITLE}}", frontmatter.title || "Untitled devlog")
-        .replaceAll("{{GAME}}", frontmatter.game || "General")
+        .replaceAll("{{TAGS}}", renderTags(tags))
         .replaceAll("{{AUTHORS}}", renderAuthors(authors))
         .replaceAll("{{AUTHOR_CARD_MODIFIER}}", authors.length > 1 ? "multi-author" : "")
         .replaceAll("{{DATE_UPLOADED}}", isoDate ? formatDate(isoDate) : "")
@@ -226,7 +249,7 @@ function buildDevlog(filename, template) {
     return {
         slug,
         title: frontmatter.title || "Untitled devlog",
-        category: frontmatter.game || "General",
+        tags,
         date: isoDate,
         excerpt: getExcerpt(frontmatter, content),
         link: `devlog/${slug}.html`

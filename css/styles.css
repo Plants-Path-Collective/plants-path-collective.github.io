@@ -351,7 +351,17 @@ body {
     font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.03em;
-    text-transform: uppercase;
+    text-transform: none;
+    padding: 0;
+    border: none;
+    background: none;
+    color: rgb(var(--white-rgb));
+}
+
+.devlog-entry .devlog-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
     padding: 0.2rem 0.6rem;
     border-radius: 20px;
     background: rgba(var(--white-rgb), 0.15);
@@ -534,12 +544,16 @@ body.devlog-page::before {
     line-height: 1.2;
 }
 
-.devlog-title-panel .devlog-game {
+.devlog-title-panel .devlog-tags {
+    display: block;
+    margin-top: 0.35rem;
+}
+
+.devlog-title-panel .devlog-tags .devlog-tag {
     font-family: var(--font-mono);
     font-size: 0.85rem;
     letter-spacing: 0.02em;
     color: rgba(var(--white-rgb), 0.7);
-    margin-top: 0.35rem;
 }
 
 /* ---- Body text panels ---- */
@@ -1329,6 +1343,7 @@ body.devlog-page::before {
         order: -1;
 
         flex: initial;
+        width: 100%;
         height: auto;
         min-height: 0;
     }

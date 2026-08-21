@@ -46,7 +46,7 @@ let devlogState = {
  * Initializes the devlog section with the provided entries.
  * Sorts entries newest first, renders filters and the list,
  * and sets up the search input listener.
- * @param {Array} entries - Array of devlog objects with properties: date, category, title, excerpt.
+ * @param {Array} entries - Array of devlog objects with properties: date, tags, title, excerpt.
  */
 function initDevlogs(entries) {
     // Newest first
@@ -65,20 +65,20 @@ function initDevlogs(entries) {
 }
 
 /**
- * Renders the filter buttons based on the unique categories found in the entries.
+ * Renders the filter buttons based on the unique tags found in the entries.
  * @param {Array} entries - Array of devlog entries.
  */
 function renderDevlogFilters(entries) {
     const filtersContainer = document.querySelector("#devlog-filters");
     if (!filtersContainer) return;
 
-    const categories = ["all", ...new Set(entries.map(e => e.category))];
+    const tags = ["all", ...new Set(entries.flatMap(e => e.tags || [e.category || "General"]))];
 
-    filtersContainer.innerHTML = categories
-        .map(cat => {
-            const label = cat === "all" ? "All" : cat;
-            const isActive = cat === devlogState.activeFilter ? "active" : "";
-            return `<button type="button" class="devlog-filter ${isActive}" data-filter="${escapeHtml(cat)}">${escapeHtml(label)}</button>`;
+    filtersContainer.innerHTML = tags
+        .map(tag => {
+            const label = tag === "all" ? "All" : tag;
+            const isActive = tag === devlogState.activeFilter ? "active" : "";
+            return `<button type="button" class="devlog-filter ${isActive}" data-filter="${escapeHtml(tag)}">${escapeHtml(label)}</button>`;
         })
         .join("");
 
@@ -101,8 +101,9 @@ function renderDevlogList() {
     if (!listContainer) return;
 
     const filtered = devlogState.entries.filter(entry => {
-        const matchesFilter = devlogState.activeFilter === "all" || entry.category === devlogState.activeFilter;
-        const haystack = `${entry.title} ${entry.excerpt} ${entry.category} ${formatDevlogDate(entry.date)}`.toLowerCase();
+        const entryTags = entry.tags || [entry.category || "General"];
+        const matchesFilter = devlogState.activeFilter === "all" || entryTags.includes(devlogState.activeFilter);
+        const haystack = `${entry.title} ${entry.excerpt} ${entryTags.join(" ")} ${formatDevlogDate(entry.date)}`.toLowerCase();
         const matchesSearch = !devlogState.searchTerm || haystack.includes(devlogState.searchTerm);
         return matchesFilter && matchesSearch;
     });
@@ -114,11 +115,12 @@ function renderDevlogList() {
 
     listContainer.innerHTML = filtered
         .map(entry => {
+            const entryTags = entry.tags || [entry.category || "General"];
             return `
                 <a class="devlog-entry" href="${entry.link}">
                     <div class="devlog-meta">
                         <span class="devlog-date">${formatDevlogDate(entry.date)}</span>
-                        <span class="devlog-tag">${escapeHtml(entry.category)}</span>
+                        ${entryTags.map(tag => `<span class="devlog-tag">${escapeHtml(tag)}</span>`).join("")}
                     </div>
                     <h3>${escapeHtml(entry.title)}</h3>
                     <p>${escapeHtml(entry.excerpt)}</p>

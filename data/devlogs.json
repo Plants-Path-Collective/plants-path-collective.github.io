@@ -2,17 +2,12 @@
   {
     "slug": "ppco-joins-the-battle",
     "title": "¡Plants Path Collective entra al combate!",
-    "category": "General",
+    "tags": [
+      "General",
+      "Hunters: Fractura del Tiempo"
+    ],
     "date": "2026-08-18",
     "excerpt": "¡Los Hunters están de vuelta! Conoce Plants Path Collective y descubre nuestro nuevo proyecto, Hunters: Fractura del Tiempo, junto a su mundo, historia y equipo de desarrollo.",
     "link": "devlog/ppco-joins-the-battle.html"
-  },
-  {
-    "slug": "story-and-progress",
-    "title": "Una pincelada de Historia, y otra de Progreso",
-    "category": "Hunters: Fractura del Tiempo",
-    "date": "2026-08-13",
-    "excerpt": "Nuevos objetos, facciones renovadas y el plan de desarrollo.",
-    "link": "devlog/story-and-progress.html"
   }
 ]

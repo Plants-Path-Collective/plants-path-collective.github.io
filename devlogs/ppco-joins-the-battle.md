@@ -1,6 +1,8 @@
 ---
 title: "¡Plants Path Collective entra al combate!"
-game: null
+tags:
+    - General
+    - Hunters: Fractura del Tiempo
 date: 2026-08-18
 authors:
   - name: "Marchel"
