@@ -1,0 +1,62 @@
+/* ============================================================
+   Hunters: Fractura del Tiempo
+   ============================================================ */
+.hunters-page .nav {
+    justify-content: space-between;
+}
+
+.hunters-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hunters-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp');
+    background-size: cover;
+    background-position: center;
+    filter: blur(14px) brightness(0.7);
+    transform: scale(1.08);
+    z-index: -1;
+}
+
+.hunters-hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hunters-news .news-content {
+    justify-content: center;
+}
+
+.hunters-news {
+    margin-top: 0;
+    background: #111318;
+}
+
+.hunters-news::before {
+    background-image: none;
+}
+
+.hunters-news .devlog-entry .devlog-tag {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .project-nav-link {
+        height: 36px;
+        padding: 0 0.65rem;
+    }
+
+    .project-nav-link img {
+        height: 26px;
+        max-width: 34vw;
+    }
+
+    .hunters-news .news-content {
+        width: 100%;
+    }
+}

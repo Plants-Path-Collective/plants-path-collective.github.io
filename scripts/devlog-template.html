@@ -33,7 +33,9 @@
     <div class="devlog-author-card glass-panel {{AUTHOR_CARD_MODIFIER}}">
       {{AUTHORS}}
       <hr class="devlog-author-divider">
-      <div class="devlog-date-uploaded">{{DATE_UPLOADED}}</div>
+      <div class="devlog-date-stack">
+        {{RECORD_DATE}}
+      </div>
     </div>
 
     <a class="devlog-back-btn glass-panel" href="{{BACK_HREF}}">
@@ -44,6 +46,7 @@
   <article class="devlog-main">
 
     <div class="devlog-title-panel glass-panel">
+      <div class="devlog-date-published">Publicado el {{PUBLISH_DATE}}</div>
       <h1>{{TITLE}}</h1>
       <div class="devlog-tags">{{TAGS}}</div>
     </div>

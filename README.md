@@ -8,6 +8,17 @@ generan a HTML automáticamente vía GitHub Actions cada vez que subís un
 
 1. Creá un archivo `.md` en `/devlogs` (mirá `devlog-template.md` como
    ejemplo del formato: frontmatter + texto + imágenes).
+   Usá `date` o `publish_date` para la fecha de publicación y, si querés
+   mostrar también cuándo fue escrito o registrado, agregá `record_date`:
+
+   ```yaml
+   publish_date: 2026-08-20
+   record_date: 2026-08-15
+   ```
+
+   `date` sigue funcionando como alias de `publish_date` para devlogs
+   existentes. La fecha de registro solo aparece dentro del devlog, debajo
+   de los autores; no aparece en la sección de noticias.
 2. Commiteá y subí ese único archivo con GitHub Desktop, como siempre.
 3. GitHub Actions corre solo, genera `devlog/{slug}.html` y actualiza
    `data/devlogs.json`, y los commitea de vuelta al repo (vas a ver un

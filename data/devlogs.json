@@ -1,12 +1,24 @@
 [
   {
+    "slug": "art-in-terrain",
+    "title": "Arte en Terreno",
+    "tags": [
+      "Hunters: Fractura del Tiempo"
+    ],
+    "publish_date": "2026-08-28",
+    "record_date": "2026-08-20",
+    "excerpt": "Hola hola, acá el equipo de arte de Plants path collective.",
+    "link": "devlog/art-in-terrain.html"
+  },
+  {
     "slug": "ppco-joins-the-battle",
     "title": "¡Plants Path Collective entra al combate!",
     "tags": [
       "General",
       "Hunters: Fractura del Tiempo"
     ],
-    "date": "2026-08-18",
+    "publish_date": "2026-08-18",
+    "record_date": "2026-08-07",
     "excerpt": "¡Los Hunters están de vuelta! Conoce Plants Path Collective y descubre nuestro nuevo proyecto, Hunters: Fractura del Tiempo, junto a su mundo, historia y equipo de desarrollo.",
     "link": "devlog/ppco-joins-the-battle.html"
   }

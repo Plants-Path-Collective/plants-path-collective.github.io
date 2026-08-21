@@ -1,5 +1,5 @@
 /* ============================================================
-   CSS Variables / Custom Properties
+    Root
    ============================================================
    Todo color usado en el sitio vive acá, agrupado por categoría.
    Los overlays translúcidos (glass, sombras, bordes) NO tienen un
@@ -50,8 +50,8 @@
 }
 
 /* ============================================================
-   Reset & Base Styles
-   ============================================================ */
+    Common
+    ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -95,8 +95,21 @@ body {
     line-height: 1.5;
 }
 
+.section {
+    padding: 100px 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
 /* ============================================================
-   Navigation
+   Nav
    ============================================================ */
 .nav {
     position: fixed;
@@ -159,24 +172,35 @@ body {
     transform: translateY(-2px);
 }
 
-/* ============================================================
-   General Section Styles
-   ============================================================ */
-.section {
-    padding: 100px 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+.project-nav-link {
+    position: absolute;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 1rem;
+    border-left: 1px solid rgba(var(--white-rgb), 0.45);
+    border-right: 1px solid rgba(var(--white-rgb), 0.45);
+    text-decoration: none;
+    transform: translateX(-50%);
+    transition: opacity var(--transition), transform var(--transition);
 }
 
-.section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    letter-spacing: -0.5px;
+.project-nav-link img {
+    display: block;
+    width: auto;
+    height: 40px;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.project-nav-link:hover {
+    opacity: 0.75;
+    transform: translateX(-50%) translateY(-2px);
 }
 
 /* ============================================================
-   Hero Section
+    Hero
    ============================================================ */
 .hero {
     height: 100vh;
@@ -212,7 +236,7 @@ body {
 }
 
 /* ============================================================
-   News Section
+    News
    ============================================================ */
 .section-news {
     padding: 0;
@@ -479,7 +503,7 @@ body {
 }
 
 /* ============================================================
-   Devlog Detail Page
+    Devlogs
    ============================================================ */
 body.devlog-page {
     position: relative;
@@ -542,6 +566,19 @@ body.devlog-page::before {
     font-weight: 600;
     color: rgb(var(--white-rgb));
     line-height: 1.2;
+}
+
+.devlog-date-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.devlog-date-published {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: rgb(var(--white-rgb));
 }
 
 .devlog-title-panel .devlog-tags {
@@ -1030,9 +1067,9 @@ body.devlog-page::before {
     font-size: 0.72rem;
 }
 
-.devlog-date-uploaded {
+.devlog-date-recorded {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 11px;
     letter-spacing: 0.03em;
     color: rgba(var(--white-rgb), 0.6);
 }
@@ -1101,7 +1138,7 @@ body.devlog-page::before {
 }
 
 /* ============================================================
-   Projects Section
+    Games
    ============================================================ */
 .section-projects {
     padding: 0;
@@ -1123,7 +1160,7 @@ body.devlog-page::before {
 }
 
 /* ============================================================
-   Project Cards
+    Game Cards
    ============================================================ */
 .card {
     position: relative;

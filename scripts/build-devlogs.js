@@ -34,8 +34,18 @@ const DEFAULT_AVATAR = "../assets/misc/icon.webp";
 function formatDate(dateInput) {
     const date = new Date(dateInput + "T00:00:00");
     return date
-        .toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" })
-        .toUpperCase();
+        .toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" });
+}
+
+function formatRecordedDate(dateInput) {
+    const date = new Date(dateInput + "T00:00:00");
+    const parts = new Intl.DateTimeFormat("es-ES", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+    }).formatToParts(date);
+    const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+    return `${values.day} de ${values.month}, ${values.year}`;
 }
 
 // gray-matter/js-yaml auto-parses unquoted YAML dates (date: 2026-07-28)
@@ -213,7 +223,9 @@ function buildDevlog(filename, template) {
     const slug = slugify(filename);
     const authors = normalizeAuthors(frontmatter, slug);
     const tags = normalizeTags(frontmatter);
-    const isoDate = frontmatter.date ? toISODateString(frontmatter.date) : null;
+    const publishDateInput = frontmatter.publish_date ?? frontmatter.date;
+    const isoPublishDate = publishDateInput ? toISODateString(publishDateInput) : null;
+    const isoRecordDate = frontmatter.record_date ? toISODateString(frontmatter.record_date) : null;
 
     const SITE_URL = "https://plants-path-collective.github.io";
 
@@ -228,7 +240,11 @@ function buildDevlog(filename, template) {
         .replaceAll("{{TAGS}}", renderTags(tags))
         .replaceAll("{{AUTHORS}}", renderAuthors(authors))
         .replaceAll("{{AUTHOR_CARD_MODIFIER}}", authors.length > 1 ? "multi-author" : "")
-        .replaceAll("{{DATE_UPLOADED}}", isoDate ? formatDate(isoDate) : "")
+        .replaceAll("{{PUBLISH_DATE}}", isoPublishDate ? formatDate(isoPublishDate) : "")
+        .replaceAll(
+            "{{RECORD_DATE}}",
+            isoRecordDate ? `<div class="devlog-date-recorded">Redactado el ${formatRecordedDate(isoRecordDate)}</div>` : ""
+        )
         .replaceAll(
             "{{BACKGROUND_IMAGE_CSS}}",
             frontmatter.background ? `url('${frontmatter.background}')` : "none"
@@ -250,7 +266,8 @@ function buildDevlog(filename, template) {
         slug,
         title: frontmatter.title || "Untitled devlog",
         tags,
-        date: isoDate,
+        publish_date: isoPublishDate,
+        record_date: isoRecordDate,
         excerpt: getExcerpt(frontmatter, content),
         link: `devlog/${slug}.html`
     };
@@ -258,8 +275,8 @@ function buildDevlog(filename, template) {
 
 function buildIndex(entries) {
     const sorted = [...entries]
-        .filter((e) => e.date)
-        .sort((a, b) => new Date(b.date) - new Date(a.date));
+        .filter((e) => e.publish_date)
+        .sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
 
     fs.mkdirSync(path.dirname(DEVLOG_INDEX_PATH), { recursive: true });
     fs.writeFileSync(DEVLOG_INDEX_PATH, JSON.stringify(sorted, null, 2), "utf8");

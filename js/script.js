@@ -50,7 +50,7 @@ let devlogState = {
  */
 function initDevlogs(entries) {
     // Newest first
-    devlogState.entries = [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
+    devlogState.entries = [...entries].sort((a, b) => new Date(b.publish_date || b.date) - new Date(a.publish_date || a.date));
 
     renderDevlogFilters(devlogState.entries);
     renderDevlogList();
@@ -103,7 +103,8 @@ function renderDevlogList() {
     const filtered = devlogState.entries.filter(entry => {
         const entryTags = entry.tags || [entry.category || "General"];
         const matchesFilter = devlogState.activeFilter === "all" || entryTags.includes(devlogState.activeFilter);
-        const haystack = `${entry.title} ${entry.excerpt} ${entryTags.join(" ")} ${formatDevlogDate(entry.date)}`.toLowerCase();
+        const publishDate = entry.publish_date || entry.date;
+        const haystack = `${entry.title} ${entry.excerpt} ${entryTags.join(" ")} ${formatDevlogDate(publishDate)}`.toLowerCase();
         const matchesSearch = !devlogState.searchTerm || haystack.includes(devlogState.searchTerm);
         return matchesFilter && matchesSearch;
     });
@@ -116,10 +117,11 @@ function renderDevlogList() {
     listContainer.innerHTML = filtered
         .map(entry => {
             const entryTags = entry.tags || [entry.category || "General"];
+            const publishDate = entry.publish_date || entry.date;
             return `
                 <a class="devlog-entry" href="${entry.link}">
                     <div class="devlog-meta">
-                        <span class="devlog-date">${formatDevlogDate(entry.date)}</span>
+                        <span class="devlog-date">${formatDevlogDate(publishDate)}</span>
                         ${entryTags.map(tag => `<span class="devlog-tag">${escapeHtml(tag)}</span>`).join("")}
                     </div>
                     <h3>${escapeHtml(entry.title)}</h3>
@@ -197,7 +199,11 @@ async function loadData() {
     try {
         const devlogRes = await fetch("data/devlogs.json");
         const devlogs = devlogRes.ok ? await devlogRes.json() : [];
-        initDevlogs(devlogs);
+        const devlogTag = document.body.dataset.devlogTag;
+        const visibleDevlogs = devlogTag
+            ? devlogs.filter(entry => (entry.tags || []).includes(devlogTag))
+            : devlogs;
+        initDevlogs(visibleDevlogs);
     } catch (err) {
         console.warn("Could not load data/devlogs.json — run `node scripts/build-devlogs.js` to generate it.", err);
         initDevlogs([]);

@@ -3,7 +3,8 @@ title: "¡Plants Path Collective entra al combate!"
 tags:
     - General
     - Hunters: Fractura del Tiempo
-date: 2026-08-18
+publish_date: 2026-08-18
+record_date: 2026-08-07
 authors:
   - name: "Marchel"
     role: "Fundador de Plants Path Collective"
