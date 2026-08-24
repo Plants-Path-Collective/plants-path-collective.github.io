@@ -1,5 +1,5 @@
 ---
-title: "¡Plants Path Collective entra al combate!"
+title: "Devlog 0 - ¡Plants Path Collective entra al combate!"
 tags:
     - General
     - Hunters: Fractura del Tiempo

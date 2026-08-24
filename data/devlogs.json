@@ -1,7 +1,18 @@
 [
   {
+    "slug": "story-and-progress",
+    "title": "Devlog 1 - Una pincelada de Historia, y otra de Progreso",
+    "tags": [
+      "Hunters: Fractura del Tiempo"
+    ],
+    "publish_date": "2026-08-24",
+    "record_date": null,
+    "excerpt": "Nuevos objetos, facciones renovadas y el plan de desarrollo.",
+    "link": "devlog/story-and-progress.html"
+  },
+  {
     "slug": "ppco-joins-the-battle",
-    "title": "¡Plants Path Collective entra al combate!",
+    "title": "Devlog 0 - ¡Plants Path Collective entra al combate!",
     "tags": [
       "General",
       "Hunters: Fractura del Tiempo"
