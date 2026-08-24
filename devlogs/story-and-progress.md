@@ -2,7 +2,8 @@
 title: "Devlog 1 - Una pincelada de Historia, y otra de Progreso"
 tags:
     - Hunters: Fractura del Tiempo
-date: 2026-08-24
+publish_date: 2026-08-24
+record_date: 2026-08-21
 authors:
   - name: "Marchel"
     role: "Director de Proyecto, Programador, Diseñador y Guionista"
