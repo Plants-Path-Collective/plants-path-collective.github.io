@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Devlog 3 - Ecos de la DevRoom — Plants Path Collective</title>
+  <meta name="description" content="Plants Path Collective es un estudio indie chileno que crea juegos con mundos y personajes inolvidables. Seguí el desarrollo en nuestros devlogs.">
+  <link rel="icon" type="image/png" href="https://i.imgur.com/hh2OL2D.png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css"/>
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Devlog 3 - Ecos de la DevRoom — Plants Path Collective">
+  <meta property="og:description" content="Sonido, interfaz y combate.">
+  <meta property="og:image" content="https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/sound-and-identities/devlog3_thumbnail.webp">
+  <meta property="og:url" content="https://plants-path-collective.github.io/devlog/sound-and-identities.html">
+  <meta property="og:site_name" content="Plants Path Collective">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Devlog 3 - Ecos de la DevRoom — Plants Path Collective">
+  <meta name="twitter:description" content="Sonido, interfaz y combate.">
+  <meta name="twitter:image" content="https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/sound-and-identities/devlog3_thumbnail.webp">
+  
+</head>
+
+<body class="devlog-page" style="--page-bg-image: url('../assets/misc/backgrounds/generic-background1.webp');">
+
+<main class="devlog-layout">
+
+  <aside class="devlog-sidebar">
+    <div class="devlog-author-card glass-panel ">
+      
+        <div class="devlog-author-top">
+          <img class="devlog-author-avatar" src="../assets/misc/avatars/ame.gif" alt="Ame">
+          <div>
+            <div class="devlog-author-name">Ame</div>
+            <div class="devlog-author-role">Programadora, Diseñadora y Guionista</div>
+          </div>
+        </div>
+      <hr class="devlog-author-divider">
+      <div class="devlog-date-stack">
+        <div class="devlog-date-recorded">Redactado el 06 de octubre, 2026</div>
+      </div>
+    </div>
+
+    <a class="devlog-back-btn glass-panel" href="../index.html#news">
+      <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+  </aside>
+
+  <article class="devlog-main">
+
+    <div class="devlog-title-panel glass-panel">
+      <div class="devlog-date-published">Publicado el 21 de octubre de 2026</div>
+      <h1>Devlog 3 - Ecos de la DevRoom</h1>
+      <div class="devlog-tags"><span class="devlog-tag">Hunters: Fractura del Tiempo</span></div>
+    </div>
+
+    
+                  <figure class="devlog-figure">
+                    <img src="../assets/devlogs/hunters-fracture/sound-and-identities/devlog3_thumbnail.webp" alt="" loading="lazy">
+                    
+                  </figure>
+
+            <div class="devlog-text-panel glass-panel">
+                <p>Buenas, aquí Ame.</p>
+
+<p>Quiero hablarles de el sonido del juego, ya que hasta ahora ha sido un paisaje bastante mudo.<br>Los efectos de sonido de Hunters: Fractura del Tiempo fueron creados con varios sonidos de varias bibliotecas de sonido y foley de mi parte editados juntos para crear algo nuevo y convincente con el fin de darle feedback al jugador. El proceso de diseño fue interesante ya que involucró encontrar una identidad sonora para cada personaje, cosa que conversé extensamente con Marchel, lo que llevó a las siguientes identidades para los personajes:</p>
+
+<div class="devlog-identity-grid">
+  <div class="devlog-identity-card renjiro">
+    <div class="devlog-identity-label">Identidad sonora</div>
+    <div class="devlog-identity-name">Renjiro</div>
+    <div class="devlog-identity-tags">
+      <span>Cálido</span><span>Abrasante</span><span>Líquido</span>
+    </div>
+  </div>
+  <div class="devlog-identity-card fasila">
+    <div class="devlog-identity-label">Identidad sonora</div>
+    <div class="devlog-identity-name">Fasila</div>
+    <div class="devlog-identity-tags">
+      <span>Cristalino</span><span>Melódico</span><span>Frío</span>
+    </div>
+  </div>
+</div>
+<p>El proceso de renjiro comenzó con sonidos de agua, chapuzones, rios fluyendo, etc e impactos genericos de varias librerías para darle extra, bueno, impacto, a los sonidos. Terminé utilizando muchos sonidos grabados bajo el agua ya que estos sonaban como liquido moviendose de tal manera que ese liquido podía ser un poco mas espeso (como la brea de renjiro). Esto en combinación con impactos y fuego crearon un ambiente sonoro bastante convincente.</p>
+            </div>
+
+    <div class="devlog-audio-grid">
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/renjiro-attack.mp3">
+        <div class="devlog-audio-title">Renjiro — Ataque Básico</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Renjiro — Ataque Básico">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/renjiro-skill1.mp3">
+        <div class="devlog-audio-title">Renjiro — Técnica 2 - Envolver</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Renjiro — Técnica 2 - Envolver">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/renjiro-skill2.mp3">
+        <div class="devlog-audio-title">Renjiro — Técnica 1 - Miasma</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Renjiro — Técnica 1 - Miasma">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/renjiro-ultimate.mp3">
+        <div class="devlog-audio-title">Renjiro — Técnica Definitiva Marea Negra</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Renjiro — Técnica Definitiva Marea Negra">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+            <div class="devlog-text-panel glass-panel">
+                <p>Para Fasila el proceso fue muy distinto ya que no encontré un sonido de cristal satisfactorio para sus efectos, entonces cree uno utilizando uns copa de vino.</p>
+
+<p>Grabé varias tomas de la copa, golpeandola con dedos, tenedores, pinzas, el palo de un tazón resonante, etc. Al final de todo esto terminé con sonidos apropiadamente cristalinos e, importantemente, afinados para el moveset de Fasila, melodía escalofriante fue por bastante el sonido que mas me costó crear debido a mi inexperiencia musical, pero quedó bastante escalofriante.</p>
+            </div>
+
+    <div class="devlog-audio-grid">
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/fasila-attack.mp3">
+        <div class="devlog-audio-title">Fasila — Ataque Básico</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Fasila — Ataque Básico">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/fasila-skill1.mp3">
+        <div class="devlog-audio-title">Fasila — Técnica 1 Resonancia</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Fasila — Técnica 1 Resonancia">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/fasila-skill2.mp3">
+        <div class="devlog-audio-title">Fasila — Técnica 2 Disrupción</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Fasila — Técnica 2 Disrupción">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/fasila-ultimate.mp3">
+        <div class="devlog-audio-title">Fasila — Técnica Definitiva Melodía Escalofriante</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Fasila — Técnica Definitiva Melodía Escalofriante">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+            <div class="devlog-text-panel glass-panel">
+                <p>Lo otro en lo que estuve empeñandome fue el diseño de UI, tanto visual como funcional. Comenzamos desde una filosofía de crear UI intuitivo y no muy complicado, en el fondo que el UI sea pick up and play y no muy intrusivo al momento de querer hacer cosas. </p>
+
+<p>En cuanto a tematica visual decidimos ir por una tematica de vidrio roto, el primer asset creado con eso en mente fueron los botones de combate.</p>
+            </div>
+
+                  <figure class="devlog-figure">
+                    <img src="../assets/devlogs/hunters-fracture/sound-and-identities/buttons.webp" alt="Botones" loading="lazy">
+                    <figcaption>Botones — Octubre, 2026 - Ame Pini</figcaption>
+                  </figure>
+
+                  <figure class="devlog-figure">
+                    <img src="../assets/devlogs/hunters-fracture/sound-and-identities/combatscreen-engine.webp" alt="Pantalla de Combate" loading="lazy">
+                    <figcaption>Pantalla de Combate — Imágenes capturas en el motor del juego</figcaption>
+                  </figure>
+
+            <div class="devlog-text-panel glass-panel">
+                <p>Aunque al hablar con otros artistas me di cuenta que el vidrio no se rompe así, entonces estuve refinando lo visual hasta llegar al menú de recompensas que es lo mejor que he hecho en cuanto la tematica visual de vidrio roto. </p>
+            </div>
+
+                  <figure class="devlog-figure">
+                    <img src="../assets/devlogs/hunters-fracture/sound-and-identities/rewards_screen.webp" alt="Paneles" loading="lazy">
+                    <figcaption>Paneles — Octubre, 2026 - Ame Pini</figcaption>
+                  </figure>
+
+                  <figure class="devlog-figure">
+                    <img src="../assets/devlogs/hunters-fracture/sound-and-identities/rewardsscreen-engine.webp" alt="Pantalla de Recompensas" loading="lazy">
+                    <figcaption>Pantalla de Recompensas — Imágenes capturas en el motor del juego</figcaption>
+                  </figure>
+
+            <div class="devlog-text-panel glass-panel">
+                <p>Para finalizar este devlog, queremos compartirles un avance del tema de combate, compuesto por uno de los músicos, Joshua Quiroz.</p>
+            </div>
+
+    <div class="devlog-audio-grid">
+      <div class="devlog-audio-clip glass-panel" data-src="../assets/devlogs/hunters-fracture/sound-and-identities/combat-ost.mp3">
+        <div class="devlog-audio-title">Combat OST (WIP) by Joshua Quiroz</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de Combat OST (WIP) by Joshua Quiroz">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+            <div class="devlog-text-panel glass-panel">
+                <p>Gracias por acompañarnos durante este devlog, en el próximo hablaremos del combate y la demo técnica, que tengan una linda tarde o/</p>
+            </div>
+
+  </article>
+
+</main>
+
+<script src="../scripts/devlog-audio.js" defer></script>
+
+</body>
+
+</html>
