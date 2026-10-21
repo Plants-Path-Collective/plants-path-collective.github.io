@@ -13,9 +13,9 @@ authors:
     avatar: "../assets/misc/avatars/benz.webp"
 background: "../assets/misc/backgrounds/generic-background1.webp"
 excerpt: null
-social_image: "https://plants-path-collective.github.io/assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp"
+social_image: "https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/art-in-terrain/devlog2_thumbnail.webp"
 ---
-![](../assets/devlogs/hunters-fracture/story-and-progress/devlog2_thumbnail.webp)
+![](../assets/devlogs/hunters-fracture/art-in-terrain/devlog2_thumbnail.webp)
 
 Hola hola, acá el equipo de arte de Plants path collective. 
 

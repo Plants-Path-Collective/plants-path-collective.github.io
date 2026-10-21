@@ -157,12 +157,46 @@ function renderAuthors(authors) {
         .join(`\n        <hr class="devlog-author-divider">`);
 }
 
+const AUDIO_BLOCK_RE = /^:::audio[ \t]*\r?\n([\s\S]*?)^:::[ \t]*\r?$/gm;
+const AUDIO_LINE_RE = /^\s*\[([^\]]+)\]\(([^)\s]+)\)\s*$/;
+
+function escapeAttr(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+}
+
+function renderAudioBlock(body) {
+    const clips = body
+        .split(/\r?\n/)
+        .map((line) => line.match(AUDIO_LINE_RE))
+        .filter(Boolean)
+        .map(([, title, src]) => `
+      <div class="devlog-audio-clip glass-panel" data-src="${escapeAttr(src)}">
+        <div class="devlog-audio-title">${escapeAttr(title)}</div>
+        <input class="devlog-audio-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posición de ${escapeAttr(title)}">
+        <div class="devlog-audio-controls">
+          <span class="devlog-audio-time">[00:00]</span>
+          <div class="devlog-audio-buttons">
+            <button type="button" class="devlog-audio-stop" aria-label="Detener"><i class="fas fa-stop"></i></button>
+            <button type="button" class="devlog-audio-play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+          </div>
+          <span></span>
+        </div>
+      </div>`)
+        .join("");
+
+    return clips ? `\n    <div class="devlog-audio-grid">${clips}\n    </div>` : "";
+}
+
 /**
  * Walks the top-level markdown tokens and groups them into
  * "blocks": either a single image, or a run of other content
  * (paragraphs, lists, etc.) that gets wrapped in one glass panel.
  */
-function renderContent(markdownBody) {
+function renderTextSegment(markdownBody) {
     const tokens = marked.lexer(markdownBody.trim()).filter((t) => t.type !== "space");
     const blocks = [];
     let currentGroup = [];
@@ -213,6 +247,23 @@ function renderContent(markdownBody) {
             </div>`;
         })
         .join("\n");
+}
+
+function renderContent(markdownBody) {
+    const out = [];
+    let last = 0;
+
+    for (const m of markdownBody.matchAll(AUDIO_BLOCK_RE)) {
+        const before = markdownBody.slice(last, m.index);
+        if (before.trim()) out.push(renderTextSegment(before));
+        out.push(renderAudioBlock(m[1]));
+        last = m.index + m[0].length;
+    }
+
+    const rest = markdownBody.slice(last);
+    if (rest.trim()) out.push(renderTextSegment(rest));
+
+    return out.join("\n");
 }
 
 function buildDevlog(filename, template) {
