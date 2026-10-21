@@ -12,7 +12,7 @@ authors:
     role: "Artista 2D y 3D"
     avatar: "../assets/misc/avatars/benz.webp"
 background: "../assets/misc/backgrounds/generic-background1.webp"
-excerpt: null
+excerpt: "La Merna y quienes la transitan."
 social_image: "https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/art-in-terrain/devlog2_thumbnail.webp"
 ---
 ![](../assets/devlogs/hunters-fracture/art-in-terrain/devlog2_thumbnail.webp)
