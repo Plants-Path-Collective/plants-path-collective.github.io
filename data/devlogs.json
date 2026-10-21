@@ -8,7 +8,8 @@
     "publish_date": "2026-09-15",
     "record_date": "2026-08-20",
     "excerpt": "La Merna y quienes la transitan.",
-    "link": "devlog/art-in-terrain.html"
+    "link": "devlog/art-in-terrain.html",
+    "social_image": "https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/art-in-terrain/devlog2_thumbnail.webp"
   },
   {
     "slug": "story-and-progress",
@@ -19,7 +20,8 @@
     "publish_date": "2026-08-24",
     "record_date": "2026-08-21",
     "excerpt": "Nuevos objetos, facciones renovadas y el plan de desarrollo.",
-    "link": "devlog/story-and-progress.html"
+    "link": "devlog/story-and-progress.html",
+    "social_image": "https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/story-and-progress/devlog1_thumbnail.webp"
   },
   {
     "slug": "ppco-joins-the-battle",
@@ -31,6 +33,7 @@
     "publish_date": "2026-08-18",
     "record_date": "2026-08-07",
     "excerpt": "¡Los Hunters están de vuelta! Conoce Plants Path Collective y descubre nuestro nuevo proyecto, Hunters: Fractura del Tiempo, junto a su mundo, historia y equipo de desarrollo.",
-    "link": "devlog/ppco-joins-the-battle.html"
+    "link": "devlog/ppco-joins-the-battle.html",
+    "social_image": "https://plants-path-collective.github.io/assets/projects/hunters-fracture/hunters-fracture_thumbnail.webp"
   }
 ]

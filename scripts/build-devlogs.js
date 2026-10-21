@@ -282,8 +282,8 @@ function buildDevlog(filename, template) {
 
     const excerpt = getExcerpt(frontmatter, content);
     const ogImage = frontmatter.social_image
-        ? `${SITE_URL}/${frontmatter.background.replace(/^\.\.\//, "")}`
-        : `${SITE_URL}https://plants-path-collective.github.io/assets/misc/main-page.webp`;
+        ? frontmatter.social_image
+        : `${SITE_URL}/assets/misc/main-page.webp`;
     const ogUrl = `${SITE_URL}/devlog/${slug}.html`;
     
     const html = template
@@ -306,7 +306,7 @@ function buildDevlog(filename, template) {
         .replaceAll("{{TITLE}}", frontmatter.title || "Untitled devlog")
         
         .replaceAll("{{OG_DESCRIPTION}}", excerpt || "Un nuevo devlog de Plants Path Collective.")
-        .replaceAll("{{OG_IMAGE}}", ogImage)
+        .replaceAll("{{OG_IMAGE}}", escapeAttr(ogImage))
         .replaceAll("{{OG_URL}}", ogUrl)
         .replaceAll("{{CONTENT}}", renderContent(content));
         
@@ -320,7 +320,8 @@ function buildDevlog(filename, template) {
         publish_date: isoPublishDate,
         record_date: isoRecordDate,
         excerpt: getExcerpt(frontmatter, content),
-        link: `devlog/${slug}.html`
+        link: `devlog/${slug}.html`,
+        social_image: ogImage
     };
 }
 
