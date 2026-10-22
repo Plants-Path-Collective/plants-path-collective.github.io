@@ -1,5 +1,17 @@
 [
   {
+    "slug": "sound-and-identities",
+    "title": "Devlog 3 - Ecos de la DevRoom",
+    "tags": [
+      "Hunters: Fractura del Tiempo"
+    ],
+    "publish_date": "2026-10-21",
+    "record_date": "2026-10-06",
+    "excerpt": "Sonido, interfaz y combate.",
+    "link": "devlog/sound-and-identities.html",
+    "social_image": "https://plants-path-collective.github.io/assets/devlogs/hunters-fracture/sound-and-identities/devlog3_thumbnail.webp"
+  },
+  {
     "slug": "art-in-terrain",
     "title": "Devlog 2 - Arte en Terreno",
     "tags": [
